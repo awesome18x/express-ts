@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import router from './routers';
 
 
 
@@ -31,9 +32,7 @@ class App {
     }
 
     private routes(): void {
-        this.app.get('/', (req, res) => {
-            return res.send('<h1>Nguyen Van Duy - duynv1895@gmail.com</h1>')
-        })
+        this.app.use(router);
     }
 }
 
